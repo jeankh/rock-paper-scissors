@@ -1,0 +1,18 @@
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+}
+
+.choice-visible {
+    opacity: 1;
+    transition: opacity 2s ease-in-out; /* Add your desired transition properties */
+}
+
+.result-visible {
+    opacity: 1;
+    transition: opacity 2s ease-in-out; /* Add your desired transition properties */
+}
+  

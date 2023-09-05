@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./reset.css";
+import "./app.css";
+import Rules from "./components/Rules";
+import Game from "./components/Game";
 
 function App() {
+  const [showRules, setShowRules] = useState(false);
+
+  const toggleRules = () => {
+    setShowRules(!showRules);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <button id="rules-btn" onClick={toggleRules}>
+        Rules
+      </button>
+      <Game />
+      {showRules && (
+        <div className="overlay" >
+          <Rules toggleRules={toggleRules} />
+        </div>
+      )}
     </div>
   );
 }

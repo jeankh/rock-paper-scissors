@@ -1,0 +1,193 @@
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 50%;
+    position: fixed;
+    background-color: transparent;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+
+}
+.header-titles {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5%;
+
+}
+.header-titles>*{
+    width: 300px;;
+}
+
+
+.header-titles h1 {
+    font-size: 20px ;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    
+}
+.picks{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pick   {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+}
+ .pick img  {
+    height: 50%;
+
+}  
+
+.empty{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.2);
+    
+
+    border-radius: 50%;
+
+}
+
+.winner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+    position: fixed;
+    background-color: transparent;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+}
+.winner h1{
+    color: #ffffff;
+    font-weight: 700;
+    width: fit-content;
+    text-transform: uppercase;
+}
+.winner button{
+    border: none;
+    background-color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 50px;
+
+}
+.winner button:hover{
+    color: red;
+}
+.is-paper{
+    border: 25px solid hsl(230, 89%, 62%);
+    box-shadow:
+        0px 10px 1px 0px  hsla(230, 89%, 62%, 0.575), /* Outside shadow on the bottom */
+        inset 0px 6px 1px 0px hsla(0, 0%, 0%, 0.267) ; 
+    
+}
+.is-scissors{
+    border: 25px solid hsl(39, 89%, 49%);
+    box-shadow:
+        0px 10px 1px 0px  hsla(39, 89%, 49%, 0.575), /* Outside shadow on the bottom */
+        inset 0px 6px 1px 0px hsla(0, 0%, 0%, 0.267) ;
+
+}
+.is-rock{
+    border: 25px solid hsl(349, 71%, 52%);
+    box-shadow:
+        0px 10px 1px 0px   hsla(349, 71%, 52%, 0.575), /* Outside shadow on the bottom */
+        inset 0px 6px 1px 0px hsla(0, 0%, 0%, 0.267) ;
+
+}
+
+
+@media (max-width: 1400px), (max-height: 950px) {
+    .result{
+        flex-direction: column-reverse;
+        width: 100%;
+        transform: translate(-50%, -70%);
+
+    }
+    .picks{
+        width: 90%;
+    }
+
+    .header-titles {
+        width: 90%;
+        margin: 5% 0 0 0 ;
+
+    }
+    .header-titles>*{
+        width: 180px;;
+    }
+    .header-titles h1 {
+        font-size: 12px ;
+        
+    }
+    .pick   {
+        width: 150px;
+        height: 150px;
+    
+    }
+    .empty{
+        width: 120px;
+        height: 120px;
+    
+    }
+    .is-paper{
+        border: 15px solid hsl(230, 89%, 62%);
+        box-shadow:
+          0px 6px 1px 0px  hsla(230, 89%, 62%, 0.575), /* Outside shadow on the bottom */
+          inset 0px 3px 1px 0px hsla(0, 0%, 0%, 0.267) ; /* Inside shadow on the top */
+        
+    }
+    .is-scissors{
+        border: 15px solid hsl(39, 89%, 49%);
+        box-shadow:
+          0px 6px 1px 0px  hsla(39, 89%, 49%, 0.575), /* Outside shadow on the bottom */
+          inset 0px 3px 1px 0px hsla(0, 0%, 0%, 0.267) ;
+    
+    }
+    .is-rock{
+        border: 15px solid hsl(349, 71%, 52%);
+        box-shadow:
+          0px 6px 1px 0px   hsla(349, 71%, 52%, 0.575), /* Outside shadow on the bottom */
+          inset 0px 3px 1px 0px hsla(0, 0%, 0%, 0.267) ;
+    
+    }
+    .winner{
+        width: 80%;
+        height: 20%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 200%);
+        z-index: 1;
+    
+    }
+
+
+}
