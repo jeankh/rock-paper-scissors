@@ -1,71 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./result.css";
 import paper from "../assets/icon-paper.svg";
 import rock from "../assets/icon-rock.svg";
 import scissors from "../assets/icon-scissors.svg";
+import { stall } from "../utils";
 
+function Result({ userChoice, computerChoice, result, onPlayAgain }) {
+  const styles = {
+    paper: "pick is-paper",
+    rock: "pick is-rock",
+    scissors: "pick is-scissors",
+  };
+  const svg = { paper: paper, rock: rock, scissors: scissors };
 
-function Result({userChoice, computerChoice, handleWinner,handlecomputerChoice ,result, handlePlayAgain}) {
-    const pickCss={'paper':'pick is-paper','rock':'pick is-rock','scissors':'pick is-scissors' };
-    const svg={'paper':paper,'rock':rock,'scissors':scissors };
-    const [showComputerChoice , setShowComputerChoice] = useState(false);
-    const [showWinner, setShowWinner] = useState(false);
+  const [showComputerChoice, setShowComputerChoice] = useState(false);
+  const [showWinner, setShowWinner] = useState(false);
 
+  const animateAIChoice = async () => {
+    await stall(1000);
+    setShowComputerChoice(true);
+    await stall(1000);
+    setShowWinner(true);
+  };
 
-    handlecomputerChoice();
-    handleWinner(userChoice, computerChoice);
-    useEffect(() => {
-
-        console.log('user : '+userChoice);
-        console.log('coputer : '+computerChoice);
-
-        const timer = setTimeout(() => {
-            setShowComputerChoice(true);
-        }, 1000);
-    
-        return () => {
-          clearTimeout(timer);
-        };
-      }, []);
-    
-      useEffect(() => {
-        const timer = setTimeout(() => {
-          setShowWinner(true);
-        }, 2000);
-    
-        return () => {
-          clearTimeout(timer);
-        };
-      }, []);
-    
+  useEffect(() => {
+    animateAIChoice();
+    // eslint-disable-next-line
+  }, []);
 
   return (
-    <div className='result'>
-        <div className='header-titles'>
-            <h1>you picked</h1>
-            <h1>the house picked</h1>
-
+    <div className="result">
+      <div className="header-titles">
+        <h1>you picked</h1>
+        <h1>the house picked</h1>
+      </div>
+      <div className="picks ">
+        <div className={styles[userChoice]}>
+          <img src={svg[userChoice]} alt={"svg " + userChoice} />
         </div>
-        <div className='picks '>
-            <div className={pickCss[userChoice]}><img src={svg[userChoice]} alt={'svg '+userChoice} /></div>
-            {showComputerChoice 
-            ? (<div className={pickCss[computerChoice]}><img src={svg[computerChoice]} alt={'svg '+computerChoice} /></div>)
-            : <div className='empty'></div>
-             }
-        </div>
-        { showWinner ? (<div className= 'winner'>
-            <h1>{result}</h1>
-            <button onClick={()=>handlePlayAgain()}>play again</button>
-
-        </div>) : <div></div>
-        }
-
-      
-       
-
-
+        {showComputerChoice ? (
+          <div className={styles[computerChoice]}>
+            <img src={svg[computerChoice]} alt={"svg " + computerChoice} />
+          </div>
+        ) : (
+          <div className="empty"></div>
+        )}
+      </div>
+      <div className={`winner ${showWinner ? "" : "hidden"}`}>
+        <h1>{result}</h1>
+        <button onClick={() => onPlayAgain()}>play again</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Result
+export default Result;
