@@ -11,6 +11,7 @@ A simple web application for playing the classic game of Rock, Paper, Scissors b
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Demo](#demo)
 - [Technologies](#technologies)
 
 ## Features
@@ -59,6 +60,10 @@ To run this project, you need to have the following software installed on your m
 2. Open your web browser and go to http://localhost:3000 to access the Rock, Paper, Scissors game.
 
 3. Play the game by selecting your choice and see the result. The score will be updated accordingly.
+
+## Demo
+
+Check out the live demo of the Rock, Paper, Scissors game [here](https://rock-paper-scissors.jean.khoge.fr/).
 
 ### Technologies
 
