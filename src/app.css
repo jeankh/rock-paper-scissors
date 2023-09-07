@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=Rubik&display=swap");
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 body {
-  background: linear-gradient(0deg, hsl(237, 49%, 15%),hsl(214, 47%, 23%))no-repeat ; 
+  background: linear-gradient(0deg, hsl(237, 49%, 15%), hsl(214, 47%, 23%))
+    no-repeat;
   position: relative;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 0;
 }
 
@@ -23,31 +25,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; 
+  z-index: 1;
 }
 
-
 #rules-btn {
-    background: transparent;
-    color: hsl(0, 0%, 87%);
-    border: 2px solid hsl(217, 16%, 45%);
-    padding: 10px 30px;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 5%;
-    left: 80%;
-    right: 10%;
+  background: transparent;
+  color: hsl(0, 0%, 87%);
+  border: 2px solid hsl(217, 16%, 45%);
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10%;
+  left: 80%;
+  right: 10%;
+}
+footer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 18px;
+}
+footer p {
+  color: #fff;
+}
+
+@media (max-width: 1180px), (max-height: 950px) {
+  #rules-btn {
+    left: 50%;
+    transform: translateX(-50%);
   }
-  
-  @media (max-width: 1180px), (max-height: 950px) {
-    #rules-btn {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  
+}

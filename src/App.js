@@ -11,7 +11,6 @@ function App() {
     setShowRules(!showRules);
   };
 
-
   return (
     <div className="app">
       <button id="rules-btn" onClick={toggleRules}>
@@ -19,10 +18,13 @@ function App() {
       </button>
       <Game />
       {showRules && (
-        <div className="overlay" >
+        <div className="overlay">
           <Rules toggleRules={toggleRules} />
         </div>
       )}
+      <footer>
+        <p>© 2023 Jean KHOGE</p>
+      </footer>
     </div>
   );
 }
