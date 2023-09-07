@@ -33,7 +33,7 @@ To run this project, you need to have the following software installed on your m
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository :
 
    ```bash
    git clone https://github.com/your-username/rock-paper-scissors.git
