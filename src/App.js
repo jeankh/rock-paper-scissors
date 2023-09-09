@@ -23,7 +23,12 @@ function App() {
         </div>
       )}
       <footer>
-        <p>© 2023 Jean KHOGE</p>
+        <p>
+          © 2023
+          <a href="https://jean.khoge.fr/" target="_blank" rel="noreferrer">
+            Jean KHOGE
+          </a>
+        </p>
       </footer>
     </div>
   );
